@@ -44,4 +44,32 @@ module Array.Extra {
   fun foldr (func : Function(a, b, b), initial : b, array : Array(a)) : b {
     `array.reduceRight(func, initial)`
   }
+
+  /*
+  Take n number of items from the left
+
+    Array.Extra.take(2, [1,2,3,4]) == [1,2]
+  */
+  fun take (number : Number, array : Array(a)) : Array(a) {
+    `array.slice(0, number)`
+  }
+
+  /*
+  Drop n number of items from the left
+
+    Array.Extra.drop(2, [1,2,3,4]) == [3,4]
+  */
+  fun drop (number : Number, array : Array(a)) : Array(a) {
+    `array.slice(number)`
+  }
+
+  /*
+  Group an array into sub groups of specified length
+  (all items are included so the last group maybe shorter if after grouping there is a remainder)
+
+    Array.Extra.groupsOf(2, [1,2,3,4,5,6,7]) == [[1,2],[3,4],[5,6],[7]]
+  */
+  fun groupsOf (number : Number, array : Array(a)) : Array(Array(a)) {
+    `groupsOf(array, number)`
+  }
 }

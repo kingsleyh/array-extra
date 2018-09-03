@@ -102,3 +102,93 @@ suite "Array flatMap" {
     }
   }
 }
+
+suite "Array take" {
+  test "take n number of items" {
+    try {
+      result =
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+        |> Array.Extra.take(2)
+
+      (result == [
+        1,
+        2
+      ])
+    }
+  }
+}
+
+suite "Array drop" {
+  test "drop n number of items" {
+    try {
+      result =
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+        |> Array.Extra.drop(2)
+
+      (result == [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ])
+    }
+  }
+}
+
+suite "Array groupsOf" {
+  test "group into items of specified size" {
+    try {
+      result =
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+        |> Array.Extra.groupsOf(2)
+
+      (result == [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ]
+      ])
+    }
+  }
+}
