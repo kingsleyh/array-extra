@@ -15,7 +15,7 @@ module Array.Extra {
     Array.Extra.append([1,1,2] [3,5,8]) == [1,1,2,3,5,8]
   */
   fun append (array1 : Array(a), array2 : Array(a)) : Array(a) {
-    `concat(array1, array2)`
+    `array1.concat(array2)`
   }
 
   /*

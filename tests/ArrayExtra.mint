@@ -192,3 +192,43 @@ suite "Array groupsOf" {
     }
   }
 }
+
+suite "Array functions should not mutate existing arrays" {
+  test "append should not mutate" {
+    try {
+      a =
+        [
+          1,
+          2,
+          3
+        ]
+
+      b =
+        [
+          4,
+          5,
+          6
+        ]
+
+      c =
+        Array.Extra.append(a, b)
+
+      (a == [
+        1,
+        2,
+        3
+      ] && b == [
+        4,
+        5,
+        6
+      ] && c == [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ])
+    }
+  }
+}
